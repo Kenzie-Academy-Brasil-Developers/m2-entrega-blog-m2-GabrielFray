@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -9,42 +9,83 @@
     <title>Blog</title>
   </head>
   <body>
-    <header>
-      <img
-        src="https://64.media.tumblr.com/d96dfe720d9d51ae397a89da4692764e/25eb2cd99deedc80-fb/s400x600/d596a2d0645c83a9de13d6bf24ec6b8689e3a24c.jpg"
-        alt=""
-      />
-      <h3>Luffy</h3>
-      <button>Logout</button>
-    </header>
-    <main>
-      <div>
-        <form action="#">
-          <textarea
-            id=""
-            placeholder="Comece seu post incrivel!"
-            cols="30"
-            rows="10"
-          ></textarea>
-          <button><img src="../images/adição.png" alt="" /></button>
-        </form>
+    <header class="cabecalho">
+      <div class="content_perfil">
+        <img
+          id="img_perfil"
+          src=""
+          alt=""
+        />
+        <h3 id="nome_user"></h3>
       </div>
-      <div>
+      <button class="logout_button">Logout</button>
+    </header>
+    <main class="main_content">
+      <section class="content_blog">
+        <form class="content_post" action="#">
+          <div class="container">
+            <textarea
+              id=""
+              placeholder="Comece seu post incrivel!"
+              cols="30"
+              rows="10"
+            ></textarea>
+            <button class="add_button">
+              <img src="../assets/adição.png" alt="" />
+            </button>
+          </div>
+        </form>
+      </section>
+      <section class="content_my_post">
         <img
           src="https://64.media.tumblr.com/d96dfe720d9d51ae397a89da4692764e/25eb2cd99deedc80-fb/s400x600/d596a2d0645c83a9de13d6bf24ec6b8689e3a24c.jpg"
           alt=""
         />
-        <h3><strong>Luffy</strong></h3>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde quia
-          fugit, voluptatibus, laudantium obcaecati sequi consequatur natus
-          quidem necessitatibus quos perferendis quis repudiandae optio totam
-          enim a sit quasi nulla?
-        </p>
-        <button>Editar</button>
-        <button>Apagar</button>
-        <span>06/07/2022</span>
-      </div>
+        <div class="my_perfil">
+          <div class="div_infos">
+            <h3><strong>Luffy</strong></h3>
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Beatae
+              corrupti, minus facere eveniet quis quia nostrum qui similique,
+              nesciunt non velit aut sed. Numquam eius ad debitis ipsa explicabo
+              consectetur?
+            </p>
+          </div>
+          <div class="every_buttons">
+            <button class="edit_button">
+              <img src="../assets/editar-arquivo.png" alt="Editar" />
+            </button>
+            <button class="delete_button">
+              <img src="../assets/excluir.png" alt="Excluir" />
+            </button>
+            <span>06/07/2022</span>
+          </div>
+        </div>
+      </section>
+      <section class="content_my_post">
+        <img
+          src="https://external-preview.redd.it/cHL26TmN3bmt8potdgBp6921M0W3RQpKxqKU9I2AS0A.jpg?auto=webp&s=02273001788b5ab4511d29bb56b60b6c789e5f65"
+          alt=""
+        />
+        <div class="others_perfil">
+          <div class="div_infos">
+            <h3><strong>Zoro</strong></h3>
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Beatae
+              corrupti, minus facere eveniet quis quia nostrum qui similique,
+              nesciunt non velit aut sed. Numquam eius ad debitis ipsa explicabo
+              consectetur? Lorem ipsum dolor sit amet consectetur adipisicing
+              elit. Accusamus voluptas non, maiores ipsum optio quas. Recusandae
+              quos nemo consequuntur deserunt et cumque quae earum, mollitia
+              dignissimos ut velit rem ipsa.
+            </p>
+          </div>
+          <div class="content_date">
+            <span>06/07/2022</span>
+          </div>
+        </div>
+      </section>
     </main>
+    <script type="module" src="../script.js"></script>
   </body>
 </html>
