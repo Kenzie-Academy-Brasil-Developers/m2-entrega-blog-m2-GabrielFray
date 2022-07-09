@@ -6,7 +6,7 @@ const registerButton = document.querySelector(".login_btn");
 
 const objectValues = [...formRegister.elements];
 
-export default class Register {
+class Register {
   static async elementsForm() {
     const objectForm = {
       username: objectValues[0].value,
