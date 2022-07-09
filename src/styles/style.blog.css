@@ -90,34 +90,33 @@ body {
   width: 90%;
   border-radius: 4px;
   padding: 10px;
-  justify-content: space-between;
 }
-.my_perfil {
-  width: 100%;
+
+.div_others {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
 }
 .div_infos {
   height: 100%;
-  width: 100%;
+  min-width: 50%;
   margin-left: 10px;
 }
 .div_infos p {
   min-height: 7rem;
-  height: 30%;
-  width: 90%;
   font-size: 0.75rem;
   word-wrap: break-word;
 }
-.content_my_post > img {
+.content_my_post figure img {
   width: 60px;
   height: 60px;
-  border-radius: 50%;
   background-color: #fff;
+  border-radius: 100%;
 }
 .every_buttons {
   display: flex;
   justify-content: end;
   flex-direction: column;
-  align-items: center;
 }
 .edit_button {
   background-color: rgba(255, 255, 255, 0);
@@ -135,13 +134,16 @@ body {
   height: 20px;
   cursor: pointer;
 }
+.remove {
+  display: none;
+}
 span {
   width: 20%;
   font-size: 12px;
   color: #989898;
 }
 .others_perfil {
-  width: 60%;
+  width: 65%;
 }
 .content_date {
   display: flex;
@@ -174,8 +176,8 @@ span {
   .logout_button {
     width: 80px;
   }
-  .others_perfil {
-    width: 70%;
+  .div_others {
+    width: 90%;
   }
   .rodape span {
     width: auto;
