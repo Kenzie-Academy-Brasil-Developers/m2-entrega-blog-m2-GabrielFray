@@ -2,7 +2,6 @@ import Api from "./js/Api.js";
 import RenderPost from "./js/Render.post.js";
 import CreateMyPost from "./js/Create.post.js";
 import DeleteButton from "./js/Delete.post.js";
-import EditButton from "./js/Edit.post.js";
 
 const dataUser = await Api.getUserId(
   localStorage.getItem("@kenzie-blog:userId")
@@ -26,4 +25,3 @@ CreateMyPost.addPost();
 
 DeleteButton.deletePostUser();
 
-EditButton.editPostUser()

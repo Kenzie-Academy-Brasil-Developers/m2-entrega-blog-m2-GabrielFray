@@ -7,7 +7,7 @@ export default class DeleteButton {
     this.deleteImg.forEach((element) => {
       element.addEventListener("click", async () => {
         await Api.deletePost(element.id);
-        location.reload();       
+        location.reload();
       });
     });
   }

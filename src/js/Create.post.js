@@ -8,8 +8,12 @@ export default class CreateMyPost {
   static async addPost() {
     this.buttonAddPost.addEventListener("click", async (event) => {
       event.preventDefault();
-      await Api.createPost(this.textarea.value);
-      location.reload();
+      const postCreated = await Api.createPost(this.textarea.value);
+      if (postCreated.message) {
+        alert(postCreated.message);
+      } else {
+        location.reload();
+      }
     });
   }
 }

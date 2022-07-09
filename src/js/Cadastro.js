@@ -14,10 +14,10 @@ class Register {
       avatarUrl: objectValues[2].value,
       password: objectValues[3].value,
     };
-    console.log(objectForm);
     const response = await Api.registerUser(objectForm);
-    console.log(response);
-    if (response) {
+    if (response.message) {
+      alert(response.message)
+    } else {
       location.replace("../../index.html");
     }
     return await Api.registerUser(objectForm);
