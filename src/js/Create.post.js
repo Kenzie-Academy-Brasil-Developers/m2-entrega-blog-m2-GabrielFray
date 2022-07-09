@@ -1,0 +1,15 @@
+import Api from "./Api.js";
+
+export default class CreateMyPost {
+  static textarea = document.querySelector("#main_content_textarea");
+
+  static buttonAddPost = document.querySelector(".add_button");
+
+  static async addPost() {
+    this.buttonAddPost.addEventListener("click", async (event) => {
+      event.preventDefault();
+      await Api.createPost(this.textarea.value);
+      location.reload();
+    });
+  }
+}
