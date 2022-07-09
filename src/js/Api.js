@@ -42,7 +42,7 @@ export default class Api {
 
         return response;
       })
-      .catch((err) => console.error(err));
+      .catch((err) => console.log(err));
   }
 
   static async getUserId(user_id) {
@@ -52,7 +52,7 @@ export default class Api {
     })
       .then((response) => response.json())
       .then((res) => res)
-      .catch((err) => console.error(err));
+      .catch((err) => console.log(err));
   }
 
   static async getPosts(num_url) {
@@ -62,6 +62,40 @@ export default class Api {
     })
       .then((response) => response.json())
       .then((res) => res)
-      .catch((err) => console.error(err));
+      .catch((err) => console.log(err));
+  }
+
+  static async createPost(my_post) {
+    return await fetch(`https://blog-m2.herokuapp.com/posts`, {
+      method: "POST",
+      headers: this.headers,
+      body: JSON.stringify({
+        content: my_post,
+      }),
+    })
+      .then((response) => response.json())
+      .then((res) => res)
+      .catch((err) => console.log(err));
+  }
+
+  static async editPost(data, post_id) {
+    return await fetch(`https://blog-m2.herokuapp.com/posts/${post_id}`, {
+      method: "PATCH",
+      headers: this.headers,
+      body: JSON.stringify(data),
+    })
+      .then((response) => response.json())
+      .then((res) => res)
+      .catch((err) => console.log(err));
+  }
+
+  static async deletePost(post_id) {
+    return await fetch(`https://blog-m2.herokuapp.com/posts/${post_id}`, {
+      method: "DELETE",
+      headers: this.headers,
+    })
+      .then((response) => response.json())
+      .then((res) => res)
+      .catch((err) => console.log(err));
   }
 }
