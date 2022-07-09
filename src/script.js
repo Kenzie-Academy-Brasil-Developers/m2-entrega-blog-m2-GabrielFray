@@ -1,10 +1,12 @@
 import Api from "./js/Api.js";
+import RenderPost from "./js/Render.post.js";
+import CreateMyPost from "./js/Create.post.js";
+import DeleteButton from "./js/Delete.post.js";
+import EditButton from "./js/Edit.post.js";
 
 const dataUser = await Api.getUserId(
   localStorage.getItem("@kenzie-blog:userId")
 );
-
-console.log(dataUser);
 
 const imagePerfil = document.querySelector("#img_perfil");
 
@@ -19,3 +21,9 @@ logoutButton.addEventListener("click", () => {
   localStorage.clear();
   location.replace("../../index.html");
 });
+
+CreateMyPost.addPost();
+
+DeleteButton.deletePostUser();
+
+EditButton.editPostUser()
