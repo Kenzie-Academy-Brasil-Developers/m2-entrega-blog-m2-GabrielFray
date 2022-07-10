@@ -19,6 +19,12 @@ export default class Login {
       localStorage.setItem("@kenzie-blog:avatarUrl", userData.avatarUrl);
       localStorage.setItem("@kenzie-blog:username", userData.username);
       location.replace("./src/pages/blog.html");
+    } else {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: `${response.message}!`,
+      });
     }
     return response;
   }
@@ -28,4 +34,3 @@ loginButton.addEventListener("click", async (event) => {
   event.preventDefault();
   await Login.elementsForm();
 });
-

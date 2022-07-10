@@ -10,7 +10,10 @@ export default class CreateMyPost {
       event.preventDefault();
       const postCreated = await Api.createPost(this.textarea.value);
       if (postCreated.message) {
-        alert(postCreated.message);
+        Swal.fire({
+          title: "Pera-lá amigão...",
+          text: `${postCreated.message}!`,
+        });
       } else {
         location.reload();
       }

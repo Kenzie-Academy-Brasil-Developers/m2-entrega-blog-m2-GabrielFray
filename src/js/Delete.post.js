@@ -6,8 +6,25 @@ export default class DeleteButton {
   static async deletePostUser() {
     this.deleteImg.forEach((element) => {
       element.addEventListener("click", async () => {
-        await Api.deletePost(element.id);
-        location.reload();
+        Swal.fire({
+          title: "Você tem certeza bro?",
+          text: "Você não vai poder reverter isso man!",
+          icon: "warning",
+          showCancelButton: true,
+          confirmButtonColor: "#3085d6",
+          cancelButtonColor: "#d33",
+          confirmButtonText: "Yes, delete it!",
+        }).then((result) => {
+          if (result.isConfirmed) {
+            Swal.fire("Deleted!", "Your file has been deleted.", "success")
+              .then(async () => {
+                await Api.deletePost(element.id);
+              })
+              .then(() => {
+                location.reload();
+              });
+          }
+        });
       });
     });
   }

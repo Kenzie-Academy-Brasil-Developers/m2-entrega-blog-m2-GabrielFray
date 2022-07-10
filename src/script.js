@@ -17,11 +17,27 @@ imagePerfil.src = dataUser.avatarUrl;
 const logoutButton = document.querySelector(".logout_button");
 
 logoutButton.addEventListener("click", () => {
-  localStorage.clear();
-  location.replace("../../index.html");
+  Swal.fire({
+    title: "Deseja sair?",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "Yes, delete it!",
+  }).then((result) => {
+    if (result.isConfirmed) {
+      Swal.fire(
+        "Deslogado!",
+        "Você será redirecionado para o login!",
+        "success"
+      ).then(() => {
+        localStorage.clear();
+        location.replace("../../index.html");
+      });
+    }
+  });
 });
 
 CreateMyPost.addPost();
 
 DeleteButton.deletePostUser();
-

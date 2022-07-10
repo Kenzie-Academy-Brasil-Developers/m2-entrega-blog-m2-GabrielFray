@@ -16,7 +16,11 @@ class Register {
     };
     const response = await Api.registerUser(objectForm);
     if (response.message) {
-      alert(response.message)
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: `${response.message}!`
+      });
     } else {
       location.replace("../../index.html");
     }
