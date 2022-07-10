@@ -13,10 +13,10 @@ export default class DeleteButton {
           showCancelButton: true,
           confirmButtonColor: "#3085d6",
           cancelButtonColor: "#d33",
-          confirmButtonText: "Yes, delete it!",
+          confirmButtonText: "Sim, delete isso!",
         }).then((result) => {
           if (result.isConfirmed) {
-            Swal.fire("Deleted!", "Your file has been deleted.", "success")
+            Swal.fire("Deletado!", "Seu post foi deletado com sucesso!", "success")
               .then(async () => {
                 await Api.deletePost(element.id);
               })
