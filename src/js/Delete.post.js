@@ -7,8 +7,8 @@ export default class DeleteButton {
     this.deleteImg.forEach((element) => {
       element.addEventListener("click", async () => {
         Swal.fire({
-          title: "Você tem certeza bro?",
-          text: "Você não vai poder reverter isso man!",
+          title: "Você tem certeza?",
+          text: "Você não vai poder reverter!",
           icon: "warning",
           showCancelButton: true,
           confirmButtonColor: "#3085d6",
@@ -16,7 +16,11 @@ export default class DeleteButton {
           confirmButtonText: "Sim, delete isso!",
         }).then((result) => {
           if (result.isConfirmed) {
-            Swal.fire("Deletado!", "Seu post foi deletado com sucesso!", "success")
+            Swal.fire(
+              "Deletado!",
+              "Seu post foi deletado com sucesso!",
+              "sucess"
+            )
               .then(async () => {
                 await Api.deletePost(element.id);
               })

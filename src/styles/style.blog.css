@@ -1,6 +1,9 @@
 body {
   font-family: "Montserrat", sans-serif;
-  background: #f9f9f9;
+  background-image: url("https://images.wallpaperscraft.com/image/single/programming_code_screen_206123_3840x2400.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 .cabecalho {
   width: 100%;
@@ -9,7 +12,10 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 3px 4px rgba(255, 255, 255, 0.076);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(68, 100, 160, 0.486);
 }
 .main_content {
   display: flex;
@@ -33,17 +39,66 @@ body {
   border-radius: 50%;
   margin-left: 14px;
 }
-.logout_button {
-  width: 65px;
-  height: 30px;
+
+.logout_button > span {
   font-weight: 400;
   font-size: 18px;
-  background: #edbc64;
-  border-radius: 5px;
   color: #fff;
-  margin-right: 9px;
+  display: none;
+}
+.logout_button {
+  background: #edbc64;
+  color: white;
+  font-family: inherit;
+  padding: 0.35em;
+  padding-left: 3.2em;
+  font-size: 17px;
+  font-weight: 500;
+  border-radius: 0.9em;
+  border: none;
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  box-shadow: inset 0 0 1.6em -0.6em #edbc64;
+  overflow: hidden;
+  position: relative;
+  height: 2.8em;
+  padding-right: 1.5em;
   cursor: pointer;
 }
+.logout_button .icon {
+  background: white;
+  margin-left: 1em;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.2em;
+  width: 2.2em;
+  border-radius: 0.7em;
+  box-shadow: 0.1em 0.1em 0.6em 0.2em #ffffff46;
+  right: 0.3em;
+  transition: all 0.3s;
+}
+
+.logout_button:hover .icon {
+  width: calc(100% - 0.6em);
+}
+
+.logout_button .icon svg {
+  width: 1.1em;
+  transition: transform 0.3s;
+  color: #edbc64;
+}
+
+.logout_button:hover .icon svg {
+  transform: translateX(0.1em);
+}
+
+.logout_button:active .icon {
+  transform: scale(0.95);
+}
+
 .container {
   display: flex;
   justify-content: flex-end;
@@ -61,16 +116,24 @@ body {
   width: 100%;
 }
 .content_post textarea {
+  color: #fff;
   resize: none;
   width: 100%;
   height: 7rem;
-  box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 3px 4px rgba(165, 152, 152, 0.124);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(52, 58, 69, 0.75);
+  border-radius: 12px;
+  border: 1px solid rgba(75, 64, 64, 0.125);
   border-radius: 5px;
   outline: none;
   font-size: 16px;
   padding: 5px 0px 0px 5px;
 }
-
+.content_post textarea::placeholder {
+  color: #fff;
+}
 .add_button {
   display: flex;
   justify-content: center;
@@ -84,12 +147,22 @@ body {
   cursor: pointer;
   color: #fff;
 }
+.add_button:hover {
+  transform: scale(1.1);
+  box-shadow: 0.1em 0.1em 0.6em 0.2em #ffffff25;
+}
 .content_my_post {
   display: flex;
-  box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 3px 4px rgba(164, 165, 152, 0.124);
   width: 90%;
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(52, 58, 69, 0.75);
+  border-radius: 12px;
+  border: 1px solid rgba(75, 64, 64, 0.125);
   border-radius: 4px;
   padding: 10px;
+  transition: 0.5s;
 }
 
 .div_others {
@@ -102,7 +175,11 @@ body {
   min-width: 50%;
   margin-left: 10px;
 }
+.div_infos strong {
+  color: #fff;
+}
 .div_infos p {
+  color: #fff;
   min-height: 7rem;
   font-size: 0.75rem;
   word-wrap: break-word;
@@ -158,12 +235,15 @@ span {
   height: 48px;
   width: 100%;
   margin-top: 1.375rem;
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(255, 255, 255, 0.101);
 }
 .rodape span {
   font-weight: 300;
-  width: 70%;
+  width: auto;
   font-size: 12px;
-  color: #000000;
+  color: #ffffff;
 }
 
 @media (min-width: 768px) {
@@ -175,6 +255,12 @@ span {
   }
   .logout_button {
     width: 80px;
+    padding-right: 7.5em;
+    padding-left: 2.2em;
+    margin-right: 10px;
+  }
+  .logout_button > span {
+    display: block;
   }
   .div_others {
     width: 90%;
